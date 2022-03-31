@@ -63,7 +63,9 @@ ROOT_URLCONF = 'SocialSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'mainsite'],
+        'DIRS': [BASE_DIR / 'mainsite',
+        BASE_DIR / 'static/templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
