@@ -6,8 +6,10 @@
     <ul>
         {%for i in notes%}
 
-            <li class="note-li"> {{i.title}}</li>
+            <li> {{i.title}}</li>
 
+            <a href="{% url 'notes.list' %}" class="btn btn-primary">Go to this note -> {{i.title}}</a>
         {%endfor%}
     </ul>   
+
 {%endblock%}
