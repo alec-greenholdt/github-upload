@@ -3,13 +3,28 @@
 {%block content%}
     <h1>These are the notes:  </h1>
 
-    <ul>
+    <div>
+        <div class="row">
+            <div class="col">Primary key</div>
+            <div class="col">Title</div>
+        </div>
         {%for i in notes%}
+        <div class="row row-cols3 g-2">
+        <div class="col">
+            <div class="p-3 border">
+                <a href="{% url 'a.note' pk=i.id %}" class="text-dark text-decoration-non"> <h4>{{i.id}}</h4></a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="p-3 border">
 
-            <li> {{i.title}}</li>
-
-            <a href="{% url 'notes.list' %}" class="btn btn-primary">Go to this note -> {{i.title}}</a>
-        {%endfor%}
-    </ul>   
+                        <a href="{% url 'a.note' pk=i.id %}" class="text-dark text-decoration-non"> <h4>{{i.title}}</h4></a>
+                        {{i.text|truncatechars:10}}
+                    
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>  
 
 {%endblock%}
