@@ -6,4 +6,5 @@ from . import views
 urlpatterns=[
     path('notes',views.NotesListView.as_view(), name="notes.list"),
     path('notes/<int:pk>', views.NotesDetailView.as_view(), name="a.note"),
+    path('note/create', views.CreateNote.as_view(), name="create.note")
 ]

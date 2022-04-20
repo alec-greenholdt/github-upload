@@ -1,10 +1,19 @@
+from cgitb import text
 from msilib.schema import ListView
 from django.shortcuts import render
 from django.http import Http404
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, CreateView
 # Create your views here.
 
+from .forms import Notesform
 from .models import Notes
+
+class CreateNote(CreateView):
+    model=Notes
+    form_class= Notesform
+    success_url='/notes'
+    template_name='templates/notes/createnote.html'
+    
 
 class NotesListView(ListView):
     model= Notes
